@@ -20,13 +20,14 @@ const UserCard = ({ id, name, url, avatar, type }) => {
           margin: "auto",
           marginTop: "10px",
           marginBottom: "10px",
-          padding: "10px"
+          padding: "10px",
+          fontSize: "18px"
         }}
       >
         <Grid
           container
           spacing={{ xs: 1, md: 1 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+          columns={{ xs: 1, sm: 1, md: 1 }}
         >
           <Grid item xs={2} sm={4} md={4}>
             <Item>
