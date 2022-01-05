@@ -10,18 +10,23 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-const UserCard = ({ id, name, url, avatar }) => {
+const UserCard = ({ id, name, url, avatar, type }) => {
   return (
     <div>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 3, margin: "10px", padding: "10px" }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           <Grid item xs={2} sm={4} md={4}>
-            <img width="50" src={avatar} alt={id} />
-            <Item>{name}</Item>
+            <Item>
+              {" "}
+              <img width="50" src={avatar} alt={id} />{" "}
+            </Item>
+            <Item>Name : {name}</Item>
+            <Item>Type : {type}</Item>
+            <Item> {url} </Item>
           </Grid>
         </Grid>
       </Box>

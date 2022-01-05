@@ -67,6 +67,7 @@ const Home = () => {
               name={user.login}
               url={user.url}
               avatar={user.avatar_url}
+              type={user.type}
             />
           ))}
         </>
