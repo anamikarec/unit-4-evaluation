@@ -1,10 +1,13 @@
-import React from "react";
-
+import { useSelector } from "react-redux";
+import Login from "./Login";
 const Search = () => {
-  return (
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  return isAuth ? (
     <div>
-      <h1>Seach Page</h1>
+      <h3>Search Page</h3>
     </div>
+  ) : (
+    <Login />
   );
 };
 export default Search;

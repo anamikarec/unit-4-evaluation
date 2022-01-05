@@ -5,21 +5,10 @@ import { useSelector } from "react-redux";
 import Navbar from "./Components/Navbar";
 import AllRoutes from "./route/AllRoutes";
 export default function App() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  return isAuth ? (
+  return (
     <div className="App">
       <Navbar />
       <AllRoutes />
     </div>
-  ) : (
-    <Login />
   );
 }
-
-// * network requests
-
-// * Working with local storage
-// * Working with multiple reducers/ combining reducers
-// * working with developer tools
-
-// * middlewares
