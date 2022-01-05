@@ -1,53 +1,9 @@
 import { useSelector } from "react-redux";
 import Login from "./Login";
 import { useState, useEffect } from "react";
+import UserCard from "./UserCard";
 
-import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary
-}));
-
-const UserCard = ({ id, name, url, avatar }) => {
-  return (
-    <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
-          <Grid item xs={2} sm={4} md={4}>
-            <img width="50" src={avatar} alt={id} />
-            <Item>{name}</Item>
-          </Grid>
-        </Grid>
-      </Box>
-    </div>
-  );
-};
-
-const Pagination = ({ totalPage, onClickCallback, currentPage }) => {
-  const pages = new Array(totalPage).fill(0).map((_, i) =>
-    i + 1 === currentPage ? (
-      <button key={i} disabled>
-        {i + 1}
-      </button>
-    ) : (
-      <button key={i} onClick={() => onClickCallback(i + 1)}>
-        {i + 1}
-      </button>
-    )
-  );
-  return <div styles={{ display: "flex", gap: "1rem" }}>{pages}</div>;
-};
-
+import Pagination from "./Pagination";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
