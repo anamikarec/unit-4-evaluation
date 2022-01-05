@@ -15,9 +15,6 @@
 import { useSelector } from "react-redux";
 import Login from "./Login";
 import { useState, useEffect } from "react";
-import UserCard from "./UserCard";
-
-import Pagination from "./Pagination";
 const Search = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
