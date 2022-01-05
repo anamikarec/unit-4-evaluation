@@ -12,11 +12,20 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const UserCard = ({ id, name, url, avatar, type }) => {
   return (
-    <div>
-      <Box sx={{ flexGrow: 3, margin: "10px", padding: "10px" }}>
+    <div style={{ margin: "auto", width: "60%" }}>
+      <Box
+        sx={{
+          width: "100%",
+          flexGrow: 3,
+          margin: "auto",
+          marginTop: "10px",
+          marginBottom: "10px",
+          padding: "10px"
+        }}
+      >
         <Grid
           container
-          spacing={{ xs: 2, md: 3 }}
+          spacing={{ xs: 1, md: 1 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           <Grid item xs={2} sm={4} md={4}>

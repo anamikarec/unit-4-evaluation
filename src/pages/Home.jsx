@@ -53,8 +53,31 @@ const Home = () => {
   return isAuth ? (
     <div className="App">
       <div style={{ margin: "20px" }}>
-        <input placeholder="...enter username" onChange={handleChange} />
-        <button onClick={handleSubmit}>Search</button>
+        <input
+          placeholder="...enter username"
+          style={{
+            height: "30px",
+            padding: "5px",
+            border: "2px solid blue",
+            borderRadius: "10px",
+            fontSize: "17px"
+          }}
+          onChange={handleChange}
+        />
+        <button
+          style={{
+            height: "45px",
+            padding: "5px",
+            border: "2px solid blue",
+            borderRadius: "10px",
+            fontSize: "17px",
+            background: "black",
+            color: "white"
+          }}
+          onClick={handleSubmit}
+        >
+          Search
+        </button>
       </div>
       {isLoading ? (
         <h3>Loading ...</h3>
