@@ -2,19 +2,38 @@ import { useSelector } from "react-redux";
 import Login from "./Login";
 import { useState, useEffect } from "react";
 
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary
+}));
+
 const UserCard = ({ id, name, url, avatar }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "2rem",
-        border: "1px solid black",
-        padding: "1rem"
-      }}
-    >
-      <img width="50" src={avatar} alt={id} />
-      <div>{name}</div>
-      <div>{url}</div>
+    <div>
+      {/* //     display: "flex",
+    //     gap: "2rem",
+    //     border: "1px solid black",
+    //     padding: "1rem"
+    //   }}
+    // >
+    //   <img width="50" src={avatar} alt={id} />
+    //   <div>{name}</div>
+    //   <div>{url}</div> */}
+      <Box sx={{ width: "100%" }}>
+        <Grid container rowSpacing={3} columnSpacing={{ xs: 3, sm: 3, md: 10 }}>
+          <Grid item xs={6}>
+            <img width="50" src={avatar} alt={id} />
+            <Item>{name}</Item>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };
